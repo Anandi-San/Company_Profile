@@ -9,7 +9,7 @@
     @for ($i = 0; $i < 12; $i++)
      <div class="col-md-3 my-3">
         <div class= "text-center">
-        <i class="fa-sharp fa-solid fa-trees" style="color: #14b845;"></i>
+        <i class="fas fa-globe"></i>
         <h5><b>kebun pinus</b></h5>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dicta quia voluptatum nesciunt accusamus itaque aperiam asperiores repellendus sunt distinctio? Hic autem qui exercitationem quisquam ullam libero perspiciatis minima atque.</p>
         </div>

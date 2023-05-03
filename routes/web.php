@@ -2,17 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\AdminBannerController;
+use App\Http\Controllers\AdminPotensiController;
+use App\Http\Controllers\AdminProfilController;
+use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\AdminKategoriController;
+use App\Http\Controllers\AdminPesanController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminAuthController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+
+
+
+
 
 Route::get('/', function () {
     // return view('home.index');
@@ -57,21 +60,27 @@ Route::get('/Kontak', function () {
         return view('home.layout.wrapper', $data);
 });
 
-Route::get('/login', function(){
-    $data = [
-        'content' => 'home/auth/login'
-    ];
-    return view('home.layout.wrapper', $data);
-});
+Route::get('/login', [AdminAuthController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login/do', [AdminAuthController::class, 'doLogin']);
+
 
 //=======admin=======
-Route::prefix('/admin')->group(function () {
-    Route::get('/dashboard', function(){
-        $data = [
-            'content' => 'admin/dashboard/index'
-        ];
-        return view('admin.layout.wrapper', $data);
-    });
+Route::prefix('/admin')->middleware('auth')->group(function () {
+
+    Route::get('/logout', [AdminAuthController::class, 'logout']);
+
+
+    Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+
+    Route::get('/profil',[AdminProfilController::class, 'index']);
+    Route::put('/profil/update',[AdminProfilController::class, 'update']);
+
+    Route::resource('/posts/blog', AdminBlogController::class);
+    Route::resource('/posts/kategori', AdminKategoriController::class);
 
     Route::resource('/user', AdminUserController::class);
+    Route::resource('/banner', AdminBannerController::class);
+    Route::resource('/potensi', AdminPotensiController::class);
+    Route::resource('/pesan', AdminPesanController::class);
+
 });

@@ -31,7 +31,11 @@
             </li>
           </ul>
           <form class= "d-flex">
+            @auth 
+            <a href="/admin/dashboard" class="btn btn-primary"><i class="fas fa-user"></i>dashboard</a>
+            @else
             <a href="/login" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</a>
+            @endauth
           </form>
           </div>
         </div>
