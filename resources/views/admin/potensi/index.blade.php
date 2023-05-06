@@ -5,8 +5,13 @@
             <table class="table">
                 <tr>
                     <td>No</td>
+<<<<<<< HEAD
                     <td>title</td>
                     <td>icon</td>
+=======
+                    <td>Title</td>
+                    <td>Icon</td>
+>>>>>>> dev
                     <td>Action</td>
                 </tr>
                 @foreach ($potensi as $item)
@@ -14,7 +19,11 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$item->title}}</td>
                     <td>
+<<<<<<< HEAD
                     <i class="{{$item->icon}}"></i>
+=======
+                        <i class="{{$item->icon}} "></i>
+>>>>>>> dev
                     </td>
                     <td>
                         <div class="d-flex">

@@ -5,6 +5,7 @@
             <table class="table">
                 <tr>
                     <td>No</td>
+<<<<<<< HEAD
                     <td>Gambar</td>
                     <td>Headline</td>
                     <td>Action</td>
@@ -15,6 +16,21 @@
                     <td>{{$loop->iteration}}</td>
                     <td><img src="/{{$item->gambar}}" width="20%" alt=""></td>
                     <td>{{$item->headhline}}</td>
+=======
+                    <td>gambar</td>
+                    <td>headline</td>
+                    <td>Action</td>
+                </tr>
+                @foreach ($banner as $item)
+                <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>
+                        <img src="/{{$item->gambar}}" width="100px"alt="">
+                    </td>
+                    <td>{{$item->headline}}
+
+                    </td>
+>>>>>>> dev
                     <td>
                         <div class="d-flex">
                             <a href="/admin/banner/{{$item->id}}/edit" class="btn btn-success mx-2">Edit</a>

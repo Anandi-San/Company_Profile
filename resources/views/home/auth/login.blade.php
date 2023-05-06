@@ -16,8 +16,13 @@
                     <form action="/login/do" method="POST">
                         @csrf
                         <div class="form-group">
+<<<<<<< HEAD
                             <label for=""><b>Username</b></label>
                             <input type="text" name="email" class="form-control" placeholder="email">
+=======
+                            <label for=""><b>Email</b></label>
+                            <input type="text" name="email" class="form-control" placeholder="Username">
+>>>>>>> dev
                         </div>
 
                         <div class="form-group mt-3">

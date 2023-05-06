@@ -19,7 +19,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-    <div class "wrapper-img-banner">
+    <div class="wrapper-img-banner">
         <img src="/img/banner1.jpg" class = "img-banner"alt="">
     </div>
       <div class="container">
@@ -67,10 +67,10 @@
     </div>
 <div class= "row">
     <div class ="col-md-6">
-        <img src="/img/banner2.jpg" class="img-tentang-desa" alt="">
+        <img src="/{{$profil->cover}}" width="100%" class="img-tentang-desa" alt="">
     </div>
     <div class="col-md-6">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem doloremque inventore, hic molestiae delectus dolorem quam velit, reiciendis neque nulla odit. Temporibus, consequuntur? Officia eius eum voluptas, maxime ab enim maiores placeat molestias ratione quibusdam eveniet voluptatum obcaecati aut magnam minima, minus consequatur perspiciatis sed! Fugit, eaque esse eum dolorem ipsa deleniti, laborum corrupti voluptas fugiat error distinctio autem recusandae nobis cum modi amet. Corporis, unde? Nam aliquid laudantium eaque recusandae voluptas ratione aliquam voluptates pariatur autem animi iste est nesciunt non quo aspernatur fuga, quasi quia maxime magnam eius id blanditiis illo. Inventore, quasi mollitia repellendus impedit repudiandae nobis.
+        {{ $profil->desc }}
         </div>
     </div>
 </div>
@@ -81,20 +81,22 @@
         </div>
 
 <div class="row">
-    <!-- @for ($i = 0; $i < 4; $i++) -->
+    
+    @foreach ($potensi as $item)
+
     <div class="col-md-3">
         <div class= "text-center">
-        <i class="fa-solid fa-trees"></i>
-        <h5><b>kebun pinus</b></h5>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dicta quia voluptatum nesciunt accusamus itaque aperiam asperiores repellendus sunt distinctio? Hic autem qui exercitationem quisquam ullam libero perspiciatis minima atque.</p>
+        <i class="fa-solid fa-tree"></i>
+        <h5><b>{{$item->title}}</b></h5>
+        <p>{{ $item->desc }}</p>
         </div>
     </div>
 
-    <!-- @endfor -->
-</div>
-
-    <div class="text-center mt-3">
-        <a href="" class="btn btn-success px-5">Selengkapnya <i class="fas fa-arrow-right"></a>
+    @endforeach
+    
+  </div>
+  <div class="text-center mt-3">
+        <a href="/Potensi" class="btn btn-success px-5">Selengkapnya</a>
     </div>
 </div>
 
@@ -104,17 +106,21 @@
     </div>
 
     <div class="row">
+
+    @foreach ($blog as $item)
         <div class="col-md-3">
             <div class="card shadow-sm">
                 <div class="wrapper-card-blog">
-                    <img src="/img/banner1.jpg" class="img-card-blog" alt="">
+                    <img src="/{{$item->cover}}" class="img-card-blog" alt="">
                 </div>
                 <div class="p-3">
-                <a href=""class="text-decoration-none"><h5>Menanam pohon</h5></a>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos, perspiciatis!</p>
+                <a href=""class="text-decoration-none"><h5>{{$item->title}}</h5></a>
+                <p>{!! Illuminate\Support\Str::limit($item->body, 50) !!}</p>
                 </div>
+                <a href="/blog/show/{{$item->id}}" class="btn btn-primary">Selengkapnya</a>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 
@@ -124,4 +130,4 @@
         <h4 class="">Hubungi Kami</h4>
         <a href="" class="btn btn-success px-5 " target="blank"><i class="fas fa-phone"></i>Hubungi Kami di WhatsApp</a>
     </div>
-</div>
+  </div>

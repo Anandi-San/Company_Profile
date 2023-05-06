@@ -23,10 +23,18 @@
 <script src="/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/dist/js/demo.js"></script>
+<<<<<<< HEAD
 <script src="/plugins/summernote/summernote-bs4.min.js"></script>
 
 <script>
 $(function () {
+=======
+<!-- Summernote -->
+<script src="/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+>>>>>>> dev
     // Summernote
     $('#summernote').summernote()
 
@@ -36,6 +44,10 @@ $(function () {
       theme: "monokai"
     });
   })
+<<<<<<< HEAD
   </script>
+=======
+</script>
+>>>>>>> dev
 </body>
 </html>

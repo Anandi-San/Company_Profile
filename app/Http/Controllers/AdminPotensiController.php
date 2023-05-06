@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\Potensi;
 use Illuminate\Http\Request;
 
 
 class AdminPotensiController extends Controller
 {
+=======
+use Illuminate\Http\Request;
+use App\Models\Potensi;
+
+class AdminPotensiController extends Controller
+{
+    
+>>>>>>> dev
     public function index()
     {
         //
@@ -43,7 +52,11 @@ class AdminPotensiController extends Controller
             'title'=> 'required',
             'icon'=> 'required',
             'desc'=> 'required',
+<<<<<<< HEAD
             
+=======
+       
+>>>>>>> dev
         ]);
 
 
@@ -86,6 +99,10 @@ class AdminPotensiController extends Controller
             'desc'=> 'required',
         ]);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
         $potensi->update($data);
         return redirect('/admin/potensi');
     }

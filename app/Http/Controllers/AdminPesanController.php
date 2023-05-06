@@ -15,7 +15,11 @@ class AdminPesanController extends Controller
     public function index()
     {
         $data = [
+<<<<<<< HEAD
             'title' => 'manajemen Pesan',
+=======
+            'title' => 'Manajemen Pesan',
+>>>>>>> dev
             'pesan' => Pesan::get(),
             'content' => 'admin/pesan/index'
         ];
@@ -52,7 +56,11 @@ class AdminPesanController extends Controller
     public function show($id)
     {
         $data = [
+<<<<<<< HEAD
             'title' => 'manajemen Pesan',
+=======
+            'title' => 'Manajemen Pesan',
+>>>>>>> dev
             // 'pesan' => Pesan::find($id),
             'content' => 'admin/pesan/show'
         ];

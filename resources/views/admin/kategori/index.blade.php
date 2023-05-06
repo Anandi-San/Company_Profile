@@ -1,7 +1,11 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-body">
+<<<<<<< HEAD
             <a href="/admin/posts/kategori/create" class="btn btn-primary mb-3"><i class="fas fa-plus"> Tambah</i></a>
+=======
+            <a href="/admin/posts/kategori/create" class="btn btn-primary mb-3"><i class="fas fa-plus">Tambah</i></a>
+>>>>>>> dev
             <table class="table">
                 <tr>
                     <td>No</td>
