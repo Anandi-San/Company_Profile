@@ -15,23 +15,27 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link {{Request:: is('/') ? 'menu.active' : ''}}" href="beranda">beranda</a>
+              <a class="nav-link {{Request:: is('/') ? 'menu.active' : ''}}" href="/">beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Profil">Profil</a>
+              <a class="nav-link" href="profil">Profil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Potensi">Potensi & Produk</a>
+              <a class="nav-link" href="potensi">Potensi & Produk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Galeri">Galeri</a>
+              <a class="nav-link" href="galeri">Galeri</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Kontak">Kontak</a>
+              <a class="nav-link" href="kontak">Kontak</a>
             </li>
           </ul>
           <form class= "d-flex">
-            <a href="/login" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</a>
+            @auth
+              <a href="/admin/dashboard" class="btn btn-danger"><i class="fas fa-user"></i>dashboard</a>
+            @else
+              <a href="/login" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>Login</a>
+            @endauth
           </form>
           </div>
         </div>
