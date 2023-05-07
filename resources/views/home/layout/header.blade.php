@@ -24,24 +24,17 @@
               <a class="nav-link" href="potensi">Potensi & Produk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="galeri">Galeri</a>
+              <a class="nav-link" href="blog">Galeri</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="kontak">Kontak</a>
             </li>
           </ul>
           <form class= "d-flex">
-<<<<<<< HEAD
-            @auth 
-            <a href="/admin/dashboard" class="btn btn-primary"><i class="fas fa-user"></i>dashboard</a>
-            @else
-            <a href="/login" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</a>
-=======
             @auth
               <a href="/admin/dashboard" class="btn btn-danger"><i class="fas fa-user"></i>dashboard</a>
             @else
               <a href="/login" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>Login</a>
->>>>>>> dev
             @endauth
           </form>
           </div>

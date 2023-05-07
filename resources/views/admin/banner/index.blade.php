@@ -5,18 +5,6 @@
             <table class="table">
                 <tr>
                     <td>No</td>
-<<<<<<< HEAD
-                    <td>Gambar</td>
-                    <td>Headline</td>
-                    <td>Action</td>
-                </tr>
-                <!-- kenapa ini baners di cari nanti -->
-                @foreach ($banners as $item)
-                <tr>
-                    <td>{{$loop->iteration}}</td>
-                    <td><img src="/{{$item->gambar}}" width="20%" alt=""></td>
-                    <td>{{$item->headhline}}</td>
-=======
                     <td>gambar</td>
                     <td>headline</td>
                     <td>Action</td>
@@ -30,11 +18,10 @@
                     <td>{{$item->headline}}
 
                     </td>
->>>>>>> dev
                     <td>
                         <div class="d-flex">
                             <a href="/admin/banner/{{$item->id}}/edit" class="btn btn-success mx-2">Edit</a>
-                            <form action="/admin/banner/{{ $item->id }}" method="Post">
+                            <form action="/admin/banner/{{ $item->id }}" method="POST">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn btn-danger"> Hapus</button>

@@ -10,11 +10,8 @@ class Blog extends Model
     use HasFactory;
 
     protected $guarded = [];
-<<<<<<< HEAD
-=======
 
     function kategori(){
         return $this->belongsTo(Kategori::class);
     }
->>>>>>> dev
 }

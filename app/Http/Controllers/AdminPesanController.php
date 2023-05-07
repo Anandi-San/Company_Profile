@@ -15,12 +15,8 @@ class AdminPesanController extends Controller
     public function index()
     {
         $data = [
-<<<<<<< HEAD
-            'title' => 'manajemen Pesan',
-=======
             'title' => 'Manajemen Pesan',
->>>>>>> dev
-            'pesan' => Pesan::get(),
+            'pesan' => Pesan::orderBy('created_at', 'desc')->get(),
             'content' => 'admin/pesan/index'
         ];
         return view('admin.layout.wrapper', $data);
@@ -55,13 +51,14 @@ class AdminPesanController extends Controller
      */
     public function show($id)
     {
+
+        $pesan = Pesan::find($id);
+        $pesan->is_read = 1;
+        $pesan->save();
+
         $data = [
-<<<<<<< HEAD
-            'title' => 'manajemen Pesan',
-=======
             'title' => 'Manajemen Pesan',
->>>>>>> dev
-            // 'pesan' => Pesan::find($id),
+            'pesan' => $pesan,
             'content' => 'admin/pesan/show'
         ];
         return view('admin.layout.wrapper', $data);
@@ -98,6 +95,11 @@ class AdminPesanController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $pesan = Pesan::find($id);
+
+        
+        $pesan->delete();
+        return redirect('/admin/pesan');
     }
 }

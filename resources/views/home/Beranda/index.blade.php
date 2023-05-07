@@ -17,39 +17,23 @@
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
+
+
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    @foreach ($banner as $key => $item)
+
+    <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
     <div class="wrapper-img-banner">
-        <img src="/img/banner1.jpg" class = "img-banner"alt="">
+        <img src="/{{$item->gambar}}" class = "img-banner"alt="">
     </div>
       <div class="container">
         <div class="carousel-caption text-left">
-          <h1>Example headline.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          <h1>{{$item->headline}}</h1>
+          <p>{{$item->desc}}</p>
         </div>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="/img/banner2.jpg" alt="">
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Another example headline.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="/img/banner1.jpg" alt="">
-      <div class="container">
-        <div class="carousel-caption text-right">
-          <h1>One more for good measure.</h1>
-          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-        </div>
-      </div>
-    </div>
+    @endforeach
   </div>
   <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

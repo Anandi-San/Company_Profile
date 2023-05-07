@@ -5,27 +5,32 @@
                 <table class="table">
                     <tr>
                         <td width="100px">#</td>
-<<<<<<< HEAD
-                        <td width="250px">Name</td>
-                        <td>Message</td>
-=======
                         <td width="250px">name</td>
-                        <td>message</td>
->>>>>>> dev
+                        <td>Message</td>
+                        <td>Action</td>
+
                     </tr>
-                    <tr>
-                        <td>1</td>
+
+                    @foreach ($pesan as $item)
+                    <tr style="{{$item->is_read == 1 ? 'background-color: #f0f0f0' : ''}}">
+                    <!-- WARNA MASIH BELUM -->
+                        <td>{{$loop->iteration}}</td>
                         <td>
-<<<<<<< HEAD
-                            <a href="/admin/pesan/{{1}}"><b></b>name</a>
+                           <a href="/admin/pesan/{{$item->id}}"><b>{{$item->name}}</b></a> 
                         </td>
-                        <td>content</td>
-=======
-                           <a href="/admin/pesan/{{1}}"><b>Anandi</b></a> 
-                        </td>
-                        <td>hai</td>
->>>>>>> dev
+                        <td>{!! Illuminate\Support\Str::limit($item->desc, 100) !!}</td>
+                        <div class="d-flex">
+                        <td>  
+                        <form action="/admin/pesan/{{ $item->id }}" method="POST">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger"> Hapus</button>
+                            </form>
+                            </td>
+                        </div>
                     </tr>
+
+                    @endforeach
                 </table>
             </div>
         </div>

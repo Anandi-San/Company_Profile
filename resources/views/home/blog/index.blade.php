@@ -7,18 +7,18 @@
 
 <div class="container my-5">
     <div class="row">
-        @for ($i = 0; $i < 12; $i++)
+        @foreach ($blog as $item)
         <div class="col-md-3 my-3">
             <div class="card shadow-sm">
                 <div class="wrapper-card-blog">
-                    <img src="/img/banner1.jpg" class="img-card-blog" alt="">
+                    <img src="/{{$item->cover}}" class="img-card-blog" alt="">
                 </div>
                 <div class="p-3">
-                <a href=""class="text-decoration-none"><h5>Menanam pohon</h5></a>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos, perspiciatis!</p>
+                <a href="/blog/show/{{$item->id}}"class="text-decoration-none"><h5>{{$item->title}}</h5></a>
+                    {!! Illuminate\Support\Str::limit($item->body, 50) !!}
                 </div>
             </div>
         </div>
-        @endfor
+        @endforeach
     </div>
 </div>

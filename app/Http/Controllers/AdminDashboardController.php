@@ -9,10 +9,6 @@ use App\Models\Potensi;
 use App\Models\User;
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 class AdminDashboardController extends Controller
 {
     function index(){
@@ -20,11 +16,7 @@ class AdminDashboardController extends Controller
             'pesan' => Pesan::count(),
             'blog' => Blog::count(),
             'potensi' => Potensi::count(),
-<<<<<<< HEAD
-            'user'  => User::count(),
-=======
             'user' => User::count(),
->>>>>>> dev
             'content' => 'admin/dashboard/index'
         ];
         return view('admin.layout.wrapper', $data);

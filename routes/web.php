@@ -12,6 +12,8 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeBlogController;
+use App\Http\Controllers\HomeContactController;
+
 
 
 
@@ -29,16 +31,13 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/profil', [HomeController::class, 'profil']);
 Route::get('/potensi', [HomeController::class, 'potensi']);
 Route::get('/blog', [HomeBlogController::class, 'index']);
-Route::get('/blog/show/{$id}', [HomeBlogController::class, 'index']);
+Route::get('/blog/show/{id}', [HomeBlogController::class, 'show']);
 
 
 
-Route::get('/kontak', function () {
-    $data = [
-        'content' => 'home/kontak/index'
-    ];
-        return view('home.layout.wrapper', $data);
-});
+Route::get('/kontak', [HomeContactController::class, 'index']);
+Route::post('/kontak/send', [HomeContactController::class, 'send']);
+
 
 Route::get('/login', [AdminAuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login/do', [AdminAuthController::class, 'doLogin']);

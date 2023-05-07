@@ -10,15 +10,28 @@
         <div class="col-md-6 my-5">
              <div class="card">
                  <div class="card-body">
+                    <form action="/kontak/send" method="POST">
+                        @csrf
                     <div class="form-group">
-                        <label for="">Nama</label>
-                        <input type="text" class="form-control" name="name" placeholder="masukkan nama anda">
-                     </div>  
-                     <div class="form-group mt-4">
-                        <label for="">Isi Pesan</label>
-                        <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="Masukkan Pesan Anda" ></textarea>
-                     </div>
-                     <Button type="submit" class="btn btn-success">KIRIM</Button>
+                            <label for="">Nama</label>
+                            <input type="text" class="form-control @error ('name') is-invalid @enderror" name="name" placeholder="masukkan nama anda">
+                            @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        </div>  
+                        <div class="form-group mt-4">
+                            <label for="">Isi Pesan</label>
+                            <textarea name="desc" id="" cols="30" rows="10" class="form-control @error ('name') is-invalid @enderror" placeholder="Masukkan Pesan Anda" ></textarea>
+                            @error('desc')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        </div>
+                        <Button type="submit" class="btn btn-success">KIRIM</Button>
+                     </form>
                  </div>
              </div> 
          </div>

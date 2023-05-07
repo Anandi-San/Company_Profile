@@ -2,11 +2,7 @@
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
       <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-<<<<<<< HEAD
-      <span class="brand-text font-weight-light">Company Profile :: Admin</span>
-=======
       <span class="brand-text font-weight-light">Company Profil</span>
->>>>>>> dev
     </a>
 
     <!-- Sidebar -->
@@ -28,13 +24,8 @@
         </a>
         </li>
 
-<<<<<<< HEAD
-        <li class="nav-item {{Request::is('admin/pesan*') ? 'active' : ''}}">
-        <a href="/admin/pesan" class="nav-link  ">
-=======
         <li class="nav-item">
         <a href="/admin/pesan" class="nav-link">
->>>>>>> dev
             <i class="nav-icon fas fa-envelope"></i>
             <p>
             Pesan
@@ -44,13 +35,8 @@
         </li>
 
 
-<<<<<<< HEAD
-          <li class="nav-item {{Request::is('admin/posts*') ? 'menu-is-opening menu-open' : ''}}">
-            <a href="#" class="nav-link">
-=======
           <li class="nav-item">
             <a href="#" class="nav-link {{Request::is('admin/posts/blog*') ? 'menu-is-opening menu-open' : '' }}">
->>>>>>> dev
               <i class="nav-icon fas fa-file"></i>
               <p>
                 Galeri
@@ -87,11 +73,7 @@
         <a href="/admin/potensi" class="nav-link {{Request::is('admin/potensi*') ? 'active' : ''}}">
             <i class="nav-icon fas fa-list"></i>
             <p>
-<<<<<<< HEAD
-            Potensi Dan Produk
-=======
             Potensi & Produk
->>>>>>> dev
             {{--<span class="right badge badge-danger">New</span>--}}
             </p>
         </a>

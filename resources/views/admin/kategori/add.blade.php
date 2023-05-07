@@ -13,13 +13,8 @@
 
                     @csrf
                     <div class="form-group">
-<<<<<<< HEAD
-                        <label for="">Nama Kategori</label>
-                        <input type="text" name="name" class="form-control @error ('name') is-invalid @enderror" placeholder="masukkan nama kategori" value="{{ isset($kategori) ? $kategori->name : old('name') }}">
-=======
                         <label for="">Name Kategori</label>
                         <input type="text" name="name" class="form-control @error ('name') is-invalid @enderror" placeholder="name kategori" value="{{ isset($kategori) ? $kategori->name : old('name') }}">
->>>>>>> dev
                         @error('name')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -27,12 +22,9 @@
                         @enderror
                     </div>
 
-<<<<<<< HEAD
-=======
 
                     
 
->>>>>>> dev
                     
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

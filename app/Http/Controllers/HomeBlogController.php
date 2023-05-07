@@ -14,4 +14,13 @@ class HomeBlogController extends Controller
     ];
     return view('home.layout.wrapper', $data);
     }
+
+    public function show($id)
+    {
+        $data = [
+            'blog' => Blog::find($id),
+            'content' => 'home/blog/show'
+        ];
+        return view('home.layout.wrapper', $data);
+    }
 }
